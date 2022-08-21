@@ -1,21 +1,20 @@
 import { Button, StyleSheet, View } from "react-native"
 
 
-const ButtonContainer = ({ label, onPress, style }) => (
+const ButtonContainer = ({ color, label, onPress, style }) => (
     <View style={[ styles.container, style ]}>
         <Button 
             color={color ? color : "#CCC" }
             onPress={onPress}
-            style>
-            { label }
-        </Button>
+            title={label}
+        />
     </View>
 );
 
 const styles = StyleSheet.create({
     container: {
-        height: 30,
-        width: 30
+        height: 50,
+        width: "23%"
     }
 });
 
