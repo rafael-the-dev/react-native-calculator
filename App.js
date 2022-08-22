@@ -1,14 +1,25 @@
-import { useMemo, useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 import { StyleSheet, Text, View } from 'react-native';
 
 import Content from './components/buttons-container';
 
 const App = () => {
-    const [ text, setText ] = useState("25");
+    const [ text, setText ] = useState("");
     const [ result, setResult ] = useState(0);
-    const content = useMemo(() => <Content />, []);
 
-    //const add
+    const numberClickHandler = useCallback(number => () => {
+        setText(currentText => `${currentText}${number}`);
+    }, []);
+
+    const deleteHandler = useCallback(() => setText(""), []);
+
+    
+    const content = useMemo(() => (
+        <Content 
+            deleteHandler={deleteHandler}
+            numberClickHandler={numberClickHandler} 
+        />
+    ), [ deleteHandler, numberClickHandler ]);
 
     return (
         <View style={styles.container}>

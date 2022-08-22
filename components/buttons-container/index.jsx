@@ -2,29 +2,29 @@ import { StyleSheet, View } from "react-native"
 
 import Button from "../button"
 
-const ButtonsContainer = () => (
+const ButtonsContainer = ({ deleteHandler, numberClickHandler }) => (
     <View style={styles.content}>
         <View style={styles.buttonsContainer}>
-            <Button label="7" />
-            <Button label="8" />
-            <Button label="9" />
-            <Button label="del" />
-            <Button label="4" />
-            <Button label="5" />
-            <Button label="6" />
-            <Button label="+" />
-            <Button label="1" />
-            <Button label="2" />
-            <Button label="3" />
-            <Button label="-" />
-            <Button label="." />
-            <Button label="0" />
-            <Button label="/" />
-            <Button label="x" />
+            <Button label="7" onPress={numberClickHandler} />
+            <Button label="8" onPress={numberClickHandler} />
+            <Button label="9" onPress={numberClickHandler} />
+            <Button isSpecialChar label="del" onPress={deleteHandler} />
+            <Button label="4" onPress={numberClickHandler} />
+            <Button label="5" onPress={numberClickHandler} />
+            <Button label="6" onPress={numberClickHandler} />
+            <Button isSpecialChar label="+" onPress={numberClickHandler} />
+            <Button label="1" onPress={numberClickHandler} />
+            <Button label="2" onPress={numberClickHandler} />
+            <Button label="3" onPress={numberClickHandler} />
+            <Button isSpecialChar label="-" onPress={numberClickHandler} />
+            <Button label="." onPress={numberClickHandler} />
+            <Button label="0" onPress={numberClickHandler} />
+            <Button isSpecialChar label="/" onPress={numberClickHandler} />
+            <Button isSpecialChar label="x" onPress={numberClickHandler} />
         </View>
         <View style={styles.secondaryButtons}>
-            <Button color="#647198" label="Reset" style={styles.button} />
-            <Button color="#D03F2F" label="=" style={styles.button} />
+            <Button color="#647198" isSpecialChar label="Reset" style={styles.button} />
+            <Button color="#D03F2F" isSpecialChar label="=" style={styles.button} />
         </View>
     </View>
 );

@@ -1,11 +1,11 @@
 import { Button, StyleSheet, View } from "react-native"
 
 
-const ButtonContainer = ({ color, label, onPress, style }) => (
+const ButtonContainer = ({ color, isSpecialChar, label, onPress, style }) => (
     <View style={[ styles.container, style ]}>
         <Button 
             color={color ? color : "#EAE3DC" }
-            onPress={onPress}
+            onPress={isSpecialChar ? onPress : onPress(label)}
             title={label}
         />
     </View>
