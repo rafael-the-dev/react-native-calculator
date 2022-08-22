@@ -23,8 +23,8 @@ const ButtonsContainer = ({ divideHandler, deleteHandler, equalClickHandler, mul
             <Button isSpecialChar label="x" onPress={multiplyHandler} />
         </View>
         <View style={styles.secondaryButtons}>
-            <Button color="#647198" isSpecialChar label="Reset" onPress={resetHandler} style={styles.button} />
-            <Button color="#D03F2F" isSpecialChar label="=" onPress={equalClickHandler} style={styles.button} />
+            <Button isSpecialChar label="Reset" onPress={resetHandler} style={[ styles.button, styles.resetButton ]} />
+            <Button isSpecialChar label="=" onPress={equalClickHandler} style={[ styles.button, styles.equalButton ]} />
         </View>
     </View>
 );
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#242D44",
         marginTop: 30,
         padding: 15,
-        paddingBottom: 0
+        paddingBottom: 4
     },
     buttonsContainer: {
         alignItems: "flex-start",
@@ -47,7 +47,13 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     button: {
-        width: "49%"
+        width: "48%"
+    },
+    resetButton: {
+        backgroundColor: "#647198",
+    },
+    equalButton: {
+        backgroundColor: "#D03F2F"
     }
 });
 

@@ -10,7 +10,15 @@ const App = () => {
     const seletedFunction = useRef(null);
 
     const numberClickHandler = useCallback(number => () => {
-        setText(currentText => `${currentText}${number}`);
+        setShowResult(isShown => {
+            setText(currentText => `${currentText}${number}`);
+
+            if(isShown) {
+                result.current = 0;
+            }
+
+            return false;
+        })
     }, []);
 
     const deleteHandler = useCallback(() => setText(""), []);
