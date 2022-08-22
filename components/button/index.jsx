@@ -4,7 +4,7 @@ import { Button, StyleSheet, View } from "react-native"
 const ButtonContainer = ({ color, label, onPress, style }) => (
     <View style={[ styles.container, style ]}>
         <Button 
-            color={color ? color : "#CCC" }
+            color={color ? color : "#EAE3DC" }
             onPress={onPress}
             title={label}
         />
@@ -13,6 +13,7 @@ const ButtonContainer = ({ color, label, onPress, style }) => (
 
 const styles = StyleSheet.create({
     container: {
+        color: "#000",
         height: 50,
         width: "23%"
     }

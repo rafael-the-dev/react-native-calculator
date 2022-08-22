@@ -1,37 +1,21 @@
+import { useMemo, useState } from "react"
 import { StyleSheet, Text, View } from 'react-native';
 
-import Button from './components/button';
+import Content from './components/buttons-container';
 
 const App = () => {
+    const [ text, setText ] = useState("25");
+    const [ result, setResult ] = useState(0);
+    const content = useMemo(() => <Content />, []);
+
+    //const add
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-
+                <Text style={styles.text}>{ text }</Text>
             </View>
-            <View style={styles.content}>
-                <View style={styles.buttonsContainer}>
-                    <Button label="7" />
-                    <Button label="8" />
-                    <Button label="9" />
-                    <Button label="del" />
-                    <Button label="4" />
-                    <Button label="5" />
-                    <Button label="6" />
-                    <Button label="+" />
-                    <Button label="1" />
-                    <Button label="2" />
-                    <Button label="3" />
-                    <Button label="-" />
-                    <Button label="." />
-                    <Button label="0" />
-                    <Button label="/" />
-                    <Button label="x" />
-                </View>
-                <View style={styles.secondaryButtons}>
-                    <Button label="Reset" style={styles.button} />
-                    <Button label="=" style={styles.button} />
-                </View>
-            </View>
+            { content }
         </View>
     );
 }
@@ -39,32 +23,21 @@ const App = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
+        backgroundColor: '#3A4663',
         justifyContent: 'center',
         paddingHorizontal: "5%",
         paddingBottom: 20
     },
     header: {
-        backgroundColor: "red",
-        paddingVertical: 20
+        backgroundColor: "#181F33",
+        paddingHorizontal: 10,
+        paddingVertical: 15
     },
-    content: {
-        backgroundColor: "cyan",
-        flexGrow: 1
-    },
-    buttonsContainer: {
-        alignItems: "flex-start",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "space-between"
-    },
-    secondaryButtons: {
-        flexDirection: "row",
-        justifyContent: "space-between"
-    },
-    button: {
-        width: "49%"
+    text: {
+        color: "#FFF",
+        fontSize: "2rem",
+        fontWeight: "bold",
+        textAlign: "right"
     }
 });
 
