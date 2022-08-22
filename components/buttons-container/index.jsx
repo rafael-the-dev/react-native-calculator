@@ -2,7 +2,7 @@ import { StyleSheet, View } from "react-native"
 
 import Button from "../button"
 
-const ButtonsContainer = ({ deleteHandler, numberClickHandler }) => (
+const ButtonsContainer = ({ divideHandler, deleteHandler, equalClickHandler, multiplyHandler, numberClickHandler, resetHandler, subtractHandler, sumHandler }) => (
     <View style={styles.content}>
         <View style={styles.buttonsContainer}>
             <Button label="7" onPress={numberClickHandler} />
@@ -12,19 +12,19 @@ const ButtonsContainer = ({ deleteHandler, numberClickHandler }) => (
             <Button label="4" onPress={numberClickHandler} />
             <Button label="5" onPress={numberClickHandler} />
             <Button label="6" onPress={numberClickHandler} />
-            <Button isSpecialChar label="+" onPress={numberClickHandler} />
+            <Button isSpecialChar label="+" onPress={sumHandler} />
             <Button label="1" onPress={numberClickHandler} />
             <Button label="2" onPress={numberClickHandler} />
             <Button label="3" onPress={numberClickHandler} />
-            <Button isSpecialChar label="-" onPress={numberClickHandler} />
+            <Button isSpecialChar label="-" onPress={subtractHandler} />
             <Button label="." onPress={numberClickHandler} />
             <Button label="0" onPress={numberClickHandler} />
-            <Button isSpecialChar label="/" onPress={numberClickHandler} />
-            <Button isSpecialChar label="x" onPress={numberClickHandler} />
+            <Button isSpecialChar label="/" onPress={divideHandler} />
+            <Button isSpecialChar label="x" onPress={multiplyHandler} />
         </View>
         <View style={styles.secondaryButtons}>
-            <Button color="#647198" isSpecialChar label="Reset" style={styles.button} />
-            <Button color="#D03F2F" isSpecialChar label="=" style={styles.button} />
+            <Button color="#647198" isSpecialChar label="Reset" onPress={resetHandler} style={styles.button} />
+            <Button color="#D03F2F" isSpecialChar label="=" onPress={equalClickHandler} style={styles.button} />
         </View>
     </View>
 );
